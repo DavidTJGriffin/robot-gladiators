@@ -3,13 +3,14 @@ var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10;
 
-console.log(playerName, playerAttack, playerHealth, playerMoney);
+// console.log(playerName, playerAttack, playerHealth, playerMoney);
 
-var enemyName = 'Roborto'
+var enemyNames = ['Roborto', 'Amy Android', 'Robo Trumble'];
 var enemyHealth = 50;
 var enemyAttack = 12;
+// console.log(enemyNames.length);
 
-var fight = function () {
+var fight = function (enemyName) {
     // Alerts players that they are starting the round
     window.alert('Welcome to Robot Gladiators');
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
@@ -50,10 +51,23 @@ var fight = function () {
             // subtract money from playerMoney for skipping
             playerMoney = playerMoney - 2;
         }
-        // if no (false), ask question again by running fight() again
-        else {
-            fight();
-        }
+           // if no (false), ask question again by running fight() again
+    else {
+        fight();
+      }
+      // if player did not chose 1 or 2 in prompt
+    } else {
+      window.alert("You need to pick a valid option. Try again!");
     }
+  };
+  // run fight function to start game
+
+  // Game States
+  // "WIN" - Player robot has defeated all enemy-robots
+  //    * Fight all enemy-robots
+  //    * Defeat each enemy-robot
+  // "LOSE" - PLayer robot's health is zero or less
+
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
 }
-fight();
