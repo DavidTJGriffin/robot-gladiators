@@ -33,7 +33,7 @@ var fightOrSkip = function () {
         }
     }
     return false;
-}
+};
 
 // fight function (now with parameter for enemy's name)
 var fight = function (enemy) {
